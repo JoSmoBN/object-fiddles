@@ -193,12 +193,22 @@ that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
 
-//Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
+  for(var key in user1) {
+    if(user1[key] == false || user1[key] == null || user1[key] == 0){
+      delete user1[key];
+    }
+  }
+
+
+//Once you get your truthy Object, Change the remaining values in the object
+//to be specific to you (name: 'your name', username: 'your username'),
+//rather than my information.
 
   //Code Here
 
-
-
+user1.name = 'Joseph Nolan';
+user1.pwHash = 'ohoiiduh435';
+user1.username = 'josephnolan6020';
 
 //NEXT PROBLEM
 
