@@ -124,15 +124,26 @@ for (var key in alsoMe) {
 
 
 
-//Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
+//Create an Object called 'album' with 5 keys named different song titles that
+//you make up, with the values being the length of each song.
 
   //Code Here
+
+var album = {
+    song1: '4:22',
+    song2: '3:14',
+    song3: '4:03',
+    song4: '3:33',
+    song5: '2:55'
+}
 
 //Now, loop through your album object alerting every song title individually.
 
   //Code Here
 
-
+for (var key in album) {
+    alert(key);
+}
 
 
 //NEXT PROBLEM
@@ -140,7 +151,8 @@ for (var key in alsoMe) {
 
 
 
-//Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
+//Create an object called states that has 5 US states as properties with the
+//values being their population (doesn't have to be accurate).
 
   //Code Here
 
