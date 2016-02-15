@@ -10,7 +10,7 @@
 var me = {
     name: 'Joseph',
     age: 30
-}
+};
 
 alert(me.name);
 
@@ -34,7 +34,7 @@ var favoriteThings = {
     book: 'Catcher in the Rye',
     movie: 'The Fountain',
     holiday: 'Thanksgiving'
-}
+};
 
 //After you've made your object, add another key named 'car' with the value
 //being your favorite car and then another key named 'brand' with the value
@@ -107,7 +107,7 @@ console.log(backPack);
       married: 'yes',
       eyeColor: 'green',
       hairColor: 'brown'
-  }
+  };
 
 //Now, loop through your object and alert every value.
 //*Tyler --> 24 --> 6'0 --> Male, etc etc
@@ -135,7 +135,7 @@ var album = {
     song3: '4:03',
     song4: '3:33',
     song5: '2:55'
-}
+};
 
 //Now, loop through your album object alerting every song title individually.
 
@@ -156,11 +156,23 @@ for (var key in album) {
 
   //Code Here
 
+  var states = {
+      Texas: 52000,
+      Oklahoma: 22000,
+      Colorado: 32000,
+      Arkansas: 12000,
+      Arizona: 14000
+  };
+
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
   //Code Here
 
-
+for (var key in states) {
+    if (states[key] > 30000) {
+        alert(key);
+    }
+}
 
 
 //NEXT PROBLEM
