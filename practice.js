@@ -188,13 +188,14 @@ var user1 = {
     username: 'tylermcginnis33',
     age: 0
 }
+
 /*Above you're given a user object. Loop through the user object checking to make sure
 that each value is truthy. If it's not truthy, remove it from the object. */
 
   //Code Here
 
   for(var key in user1) {
-    if(user1[key] == false || user1[key] == null || user1[key] == 0){
+    if(!user1[key]) {
       delete user1[key];
     }
   }
@@ -231,11 +232,14 @@ var user2 = {
 
   //Code Here
 
+  user2.name = 'Tyler S. McGinnis';
+  user2.email = 'tyler.mcginnis@devmounta.in';
+
 //Now call the sayName method that's on the user object which will alert the users email
 
   //Code Here
 
-
+user2.sayName();
 
 
 //NEXT PROBLEM
@@ -247,45 +251,98 @@ var user2 = {
 
   //Code Here
 
+var methodCollection = {};
+
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
   //Code Here
 
+  methodCollection.alertHello = function() {
+    alert('hello');
+  };
+  methodCollection.logHello = function() {
+    console.log('hello');
+  };
+
+
 //Now call your alertHello and logHello methods.
 
   //Code Here
 
-
+methodCollection.alertHello();
+methodCollection.logHello();
 
 //NEXT PROBLEM
 
 
 
-// Create a function called MakePerson which takes in name, birthday, ssn as its parameters and returns a new object with all of the information that you passed in.
+// Create a function called MakePerson which takes in name, birthday, ssn as
+//its parameters and returns a new object with all of the information that you
+//passed in.
 
   //Code Here
 
+var MakePerson = function(name, birthday, ssn) {
+    return {
+        name: name,
+        birthday: birthday,
+        ssn: ssn
+    };
+};
+
+var meObj = MakePerson('Joseph', 'June 24', 578635555);
+console.log(meObj);
 
 
 //NEXT PROBLEM
 
 
 
-// Create a function called MakeCard which takes in cardNumber, expirationDate, and securityCode to make a Credit Card object and returns that object so that whenever you invoke MakeCard, you get a brand new credit card.
+// Create a function called MakeCard which takes in cardNumber, expirationDate,
+//and securityCode to make a Credit Card object and returns that object so that
+//whenever you invoke MakeCard, you get a brand new credit card.
 
   //Code Here
 
+var MakeCard = function(cardNumber, expirationDate, securityCode) {
+    return {
+    cardNumber: cardNumber,
+    expirationDate: expirationDate,
+    securityCode: securityCode
+    };
+};
 
+var newCard = MakeCard(354455345, 0624, 301);
+console.log(newCard);
 
 //NEXT PROBLEM
 
 
 
-/* As of this point you should have a MakePerson and a MakeCard function which returns you either a person or a credit card object.
-   Now, create a bindCard function that takes in a person object as its first parameter and a creditcard object as its second parameter.
-   Have bindCard merge the two parameters together into a new object which contains all the properties from the person as well as the creditcard. While Object.assign would give you the answer, specRunner requires an answer without using it.
+/* As of this point you should have a MakePerson and a MakeCard function which
+   returns you either a person or a credit card object.
+   Now, create a bindCard function that takes in a person object as its first
+   parameter and a creditcard object as its second parameter.
+   Have bindCard merge the two parameters together into a new object which
+   contains all the properties from the person as well as the creditcard.
+   While Object.assign would give you the answer, specRunner requires an
+   answer without using it.
 */
 
   //Code Here
+  var bindCard = function(perObj, ccObj) {
+      var myInfo = {};
+
+      for (var key in perObj) {
+          myInfo[key] = perObj[key];
+      }
+      for (key in ccObj) {
+          myInfo[key] = ccObj[key];
+      }
+    return myInfo;
+  };
+
+  myInfo = bindCard(meObj, newCard);
+  console.log(myInfo);
